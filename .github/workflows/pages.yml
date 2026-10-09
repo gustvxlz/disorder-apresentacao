@@ -1,6 +1,6 @@
 name: Publicar apresentação no Pages
 
-# Execução manual enquanto o Pages depende da escolha do plano/visibilidade.
+# Execução manual para publicar somente quando solicitado.
 on:
   workflow_dispatch:
 

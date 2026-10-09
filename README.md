@@ -4,13 +4,13 @@ Projeto **separado** do jogo oficial. Não modifica o repositório, assets origi
 
 ## Repositório e publicação
 
-Repositório privado: [gustvxlz/disorder-apresentacao](https://github.com/gustvxlz/disorder-apresentacao).
+Repositório público, por autorização do autor: [gustvxlz/disorder-apresentacao](https://github.com/gustvxlz/disorder-apresentacao).
 
-O GitHub recusou a ativação inicial do Pages porque o plano atual da conta não permite Pages neste repositório privado. O site não foi publicado. Não houve alteração automática de visibilidade nem contratação de plano.
+GitHub Pages ativado com fonte **GitHub Actions**. Endereço da apresentação: [gustvxlz.github.io/disorder-apresentacao](https://gustvxlz.github.io/disorder-apresentacao/). A tentativa inicial com repositório privado foi recusada pelo plano da conta; o autor autorizou torná-lo público. Nenhum plano pago foi contratado. O jogo oficial usa outro repositório e outro endereço, que não foram alterados.
 
-O fluxo `.github/workflows/pages.yml` fica preparado para execução manual, sem disparar ações a cada envio. Depois de resolver a elegibilidade do plano ou autorizar que este repositório seja público, ativar Pages com fonte **GitHub Actions** e executar **Publicar apresentação no Pages** na aba Actions.
+O fluxo `.github/workflows/pages.yml` tem execução manual, sem disparar ações a cada envio. Para publicar uma atualização, primeiro enviar os arquivos ao repositório e depois executar **Publicar apresentação no Pages** na aba Actions, usando a branch `codex/presentation`. Aguardar a conclusão antes de conferir o site.
 
-A publicação envia somente HTML/CSS/JS, as imagens utilizadas e o PDF de backup. Não publica as ferramentas de produção, os documentos de ensaio nem as renderizações de revisão. As notas incorporadas ao JavaScript continuam acessíveis a quem abrir o site. Repositório privado não torna o site Pages privado: os recursos enviados ao navegador são públicos. Consulte a [documentação do GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+A publicação do site envia somente HTML/CSS/JS, as imagens utilizadas e o PDF de backup. Ferramentas de produção e documentos de ensaio não entram no site, mas os arquivos versionados podem ser consultados no repositório público. Renderizações temporárias de revisão não são versionadas. As notas incorporadas ao JavaScript também são acessíveis a quem abrir o site. Consulte a [documentação do GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
 ## Abrir e apresentar
 
