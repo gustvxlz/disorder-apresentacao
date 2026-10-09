@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="DISORDER — apresentação interativa offline para game jam.">
+  <title>DISORDER — um expediente ruim</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="interactions.js" defer></script>
+  <script src="presentation.js" defer></script>
+</head>
+<body>
+  <main id="stage" aria-label="Apresentação DISORDER" tabindex="-1">
+    <section class="slide corporate active" data-title="Um expediente ruim" aria-label="Tela 1 — abertura">
+      <div class="office-frame cover">
+        <div class="masthead"><span>DISORDER / SISTEMA INTERNO</span><span>EXPEDIENTE 001</span></div>
+        <div class="cover-heading"><p class="eyebrow">APRESENTAÇÃO INTERATIVA · GAME JAM</p><h1>DIS<span>O</span>RDER</h1><p class="tagline">Um expediente ruim.<br>Um apocalipse pior ainda.</p></div>
+        <img class="cover-portrait" src="assets/images/protagonist-bust.png" alt="Retrato do protagonista cansado, de terno gasto e gravata vermelha">
+        <div class="cover-actions"><button id="start" class="primary">INICIAR APRESENTAÇÃO <span>→</span></button><button class="text-button" data-fullscreen>TELA CHEIA</button></div>
+        <p class="cover-footer">UM JOGO INDIE EM PRIMEIRA PESSOA. NENHUM BENEFÍCIO INCLUÍDO.</p>
+      </div>
+    </section>
+
+    <section class="slide corporate" data-title="O jogo em uma frase" aria-label="Tela 2 — o que é DISORDER" hidden>
+      <div class="office-frame">
+        <div class="masthead"><span>FICHA DO PROJETO</span><span>CLASSIFICAÇÃO: INDIE</span></div>
+        <p class="eyebrow">02 / O QUE É DISORDER</p>
+        <h2>Comédia de escritório.<br><em>Apocalipse em primeira pessoa.</em></h2>
+        <div class="project-file"><div><p class="lead">Um funcionário dispensado precisa sobreviver a colegas que levaram o trabalho para o pós-vida.</p><div class="labels"><span>FPS ESTILIZADO</span><span>HUMOR ÁCIDO</span><span>PROGRESSÃO</span></div><p class="file-note">Capítulo 1 jogável no navegador.<br>Combate, economia e novas runs.</p></div><figure class="portrait-file"><img src="assets/images/protagonist-bust.png" alt="Arte usada no HUD do protagonista shooter"><figcaption>PERFIL: CANSADO. AINDA FUNCIONAL.</figcaption></figure></div>
+      </div>
+    </section>
+
+    <section class="slide corporate" data-title="Antes do apocalipse" aria-label="Tela 3 — premissa" hidden>
+      <div class="office-frame story">
+        <div class="masthead"><span>OCORRÊNCIA / RECURSOS HUMANOS</span><span>ANTES DO CAOS</span></div>
+        <div class="story-copy"><p class="eyebrow">03 / PREMISSA</p><h2>Você só queria<br>ir embora.</h2><p class="lead">Rotina. Burocracia. Demissão.<br>Na saída, o mundo muda.</p><p class="file-note">O escritório mantém sua imagem<br>640 × 480 / 4:3.</p><span class="stamp">EXPEDIENTE ENCERRADO</span></div>
+        <figure class="office-shot"><img src="assets/screenshots/office.png" alt="Captura real do escritório, com personagem e mesa"><figcaption>CAPTURA REAL · ESCRITÓRIO</figcaption></figure>
+        <p class="story-transition">O PROBLEMA AGORA ESTÁ DO LADO DE FORA. <span>→</span></p>
+      </div>
+    </section>
+
+    <section class="slide shooter pivot" data-title="O loop de sobrevivência" aria-label="Tela 4 — transição e gameplay loop" hidden>
+      <img class="scene-bg" src="assets/screenshots/extinguisher.jpg" alt="Rua real do shooter com extintor e tampa de lixeira em primeira pessoa">
+      <div class="dark-wash"></div>
+      <div class="content"><p class="eyebrow">04 / AGORA EM 16:9</p><h2>Fim do expediente.<br><em>Início do problema.</em></h2><p class="lead">Sobreviver é escolher onde gastar seu próximo recurso.</p>
+        <div class="loop" aria-label="Loop de gameplay">
+          <button data-loop="0" class="selected"><b>01</b><span>EXPLORAR</span></button><i>→</i>
+          <button data-loop="1"><b>02</b><span>COMBATER</span></button><i>→</i>
+          <button data-loop="2"><b>03</b><span>COLETAR AURA</span></button><i>→</i>
+          <button data-loop="3"><b>04</b><span>MELHORAR</span></button><i>→</i>
+          <button data-loop="4"><b>05</b><span>AVANÇAR</span></button>
+        </div><p id="loop-detail" class="loop-detail" aria-live="polite">Leia a rua: cobertura, suprimentos e caminhos para o próximo confronto.</p>
+        <p class="caption">IMAGEM REAL DO JOGO · CAPÍTULO COM SEIS ÁREAS E UM CONFRONTO FINAL</p>
+      </div>
+    </section>
+
+    <section class="slide shooter arsenal" data-title="Armas com funções diferentes" aria-label="Tela 5 — armas e combate" hidden>
+      <div class="content"><p class="eyebrow">05 / ARSENAL</p><h2>Ferramentas de<br><em>desligamento.</em></h2><div class="weapon-copy"><p class="small-label">ARMA SELECIONADA</p><h3 id="weapon-title">ESPINGARDA</h3><p id="weapon-role" class="lead">Controle de grupos a curta distância.</p><p id="weapon-detail">10 pellets independentes.<br>Um disparo pode atingir vários alvos.</p><div class="combat-facts"><span>HEADSHOTS</span><span>RECUO</span><span>DEFESA COM TAMPA</span></div><p class="caption">Impactos por superfície · munição finita<br>Gore configurável · feedback visual e sonoro</p></div></div>
+      <figure class="weapon-shot"><img id="weapon-image" src="assets/screenshots/shotgun.jpg" alt="Espingarda em primeira pessoa na rua do jogo"><figcaption>CAPTURA REAL · GALERIA DE ARMAS DO JOGO</figcaption></figure>
+      <div class="weapon-selector" role="group" aria-label="Selecionar arma">
+        <button data-weapon="extinguisher">01 EXTINTOR</button><button data-weapon="knife">02 FACA</button><button data-weapon="pistol">03 PISTOLA</button><button data-weapon="shotgun" class="selected">04 ESPINGARDA</button><button data-weapon="smg">05 SMG</button><button data-weapon="revolver">06 REVÓLVER</button><button data-weapon="rifle">07 RIFLE</button><button data-weapon="stapler">08 GRAMPEADOR</button>
+      </div>
+    </section>
+
+    <section class="slide paper enemies" data-title="A equipe pós-vida" aria-label="Tela 6 — inimigos" hidden>
+      <div class="content"><p class="eyebrow">06 / DOSSIÊS DA EMPRESA</p><h2>Uma equipe.<br><em>Vários problemas.</em></h2><div class="enemy-detail"><span id="enemy-type" class="stamp">COMUM</span><h3 id="enemy-title">EXECUTIVO</h3><p id="enemy-behavior" class="lead">Persegue e pressiona de perto.</p><p id="enemy-counter">Mantenha distância. Use a tampa para abrir espaço.</p><p class="caption">Recortes 2D transparentes no mundo 3D.<br>Comportamento legível antes do ataque.</p></div></div>
+      <div class="dossier-art"><div class="dossier-grid"></div><img id="enemy-image" src="assets/images/zombie-executive.png" alt="Recorte do inimigo executivo zumbi"><span class="dossier-id">ARQUIVO / 006 — ATIVO</span></div>
+      <div class="enemy-selector" role="group" aria-label="Selecionar dossiê"><button data-enemy="common" class="selected">COMUM</button><button data-enemy="fast">RÁPIDO</button><button data-enemy="heavy">PESADO</button><button data-enemy="ranged">À DISTÂNCIA</button><button data-enemy="elite">ELITE</button><button data-enemy="special">ESPECIAL</button></div>
+    </section>
+
+    <section class="slide boss" data-title="Diretor Executivo" aria-label="Tela 7 — revelação do boss" hidden>
+      <div class="boss-grid"></div><div class="boss-art"><img src="assets/images/zombie-director.webp" alt="Arte do Diretor Executivo, chefe zumbi corporativo"></div>
+      <div class="boss-copy"><p class="eyebrow">07 / REUNIÃO FINAL</p><div id="boss-locked"><p class="small-label">IDENTIDADE RESTRITA</p><h2>???</h2><p class="lead">A última aprovação<br>vem da diretoria.</p><button id="reveal-boss" class="primary">REVELAR ARQUIVO <span>→</span></button><p class="caption">SETA DIREITA TAMBÉM REVELA</p></div>
+        <div id="boss-revealed" hidden><p class="small-label">DIRETORIA / AMEAÇA MÁXIMA</p><h2>Diretor<br>Executivo.</h2><p class="boss-quote">“Sua resistência foi registrada.”</p><div class="phase-list"><div><b>01</b><span>INVESTIDA · PISÃO · ARREMESSO</span></div><div><b>02</b><span>MAIS PRESSÃO · EQUIPE INVOCADA</span></div><div><b>03</b><span>REUNIÃO · CORTES · DEMISSÃO EM MASSA</span></div></div><p class="caption">Três fases · avisos antes dos ataques · janelas de resposta<br>Não é apenas uma barra de vida maior.</p></div>
+      </div>
+    </section>
+
+    <section class="slide shooter economy" data-title="Aura-Matic" aria-label="Tela 8 — economia e compra simulada" hidden>
+      <div class="content"><p class="eyebrow">08 / ECONOMIA DA RUN</p><h2>Sua alma.<br><em>Nossa margem.</em></h2><p class="lead">1 inimigo comum = 1 Aura garantida.</p><div class="aura-rule"><span>◆</span><p>Orbe físico · coleta automática<br>Pesados: 2 · elites: 4–5<br>Double Aura dobra os drops comuns.</p></div><figure class="real-shop"><div class="shop-crop"><img src="assets/screenshots/shop-full.jpg" alt="Detalhe real da interface da loja Aura-Matic"></div><figcaption>INTERFACE REAL · DETALHE RECORTADO</figcaption></figure></div>
+      <div class="shop-simulator"><div class="simulator-top"><span>AURA-MATIC / SIMULAÇÃO</span><button id="reset-shop" class="text-button">REINICIAR</button></div><p class="small-label">SALDO DE EXEMPLO · NÃO ALTERA O JOGO</p><p class="sim-balance">◆ <span id="sim-balance">100</span> <small>AURA</small></p><div id="upgrade-list"></div><p id="shop-feedback" role="status">Escolha um benefício. A próxima compra ficará mais cara.</p><p class="caption">Preços-base do modo Normal.<br>Preço = arredondar para cima(base × 1,28ⁿⁱ́ᵛᵉˡ)</p></div>
+    </section>
+
+    <section class="slide paper replay" data-title="O próximo expediente" aria-label="Tela 9 — rejogabilidade e proposta de progressão" hidden>
+      <div class="content"><p class="eyebrow">09 / DEPOIS DA RUN</p><h2>Acabou a run.<br><em>Não acabou o expediente.</em></h2><div class="replay-columns"><article><p class="status implemented">JÁ IMPLEMENTADO</p><h3>Voltar diferente.</h3><p>Normal, Hard e Hora Extra.<br>Eventos, encontros e modificadores.</p><div class="meta-flow"><span>AURA + UPGRADES<br><b>reiniciam na nova run</b></span><span>ARMAS + DESAFIOS + RECORDES<br><b>ficam no perfil local</b></span></div></article><article class="proposal"><p class="status">PROPOSTA / NÃO IMPLEMENTADA</p><h3>Desempenho.</h3><p>1 eliminação → 1 ponto persistente.<br>Investir em melhorias permanentes.</p><div class="run-example"><span>EXEMPLO, NÃO RECORDES REAIS</span><b>312 KILLS <i>/</i> 84 HEADSHOTS</b><p>31:42 de sobrevivência → 312 pontos propostos</p></div></article></div></div>
+    </section>
+
+    <section class="slide shooter technical" data-title="Recursos da empresa" aria-label="Tela 10 — tecnologia e arquitetura" hidden>
+      <div class="content"><p class="eyebrow">10 / RECURSOS DA EMPRESA</p><h2>Um FPS.<br><em>Só um navegador.</em></h2><div class="tech-layout"><div><p class="lead">JavaScript · Three.js<br>HTML · CSS · Vite</p><p class="tech-note">Site estático no GitHub Pages.<br>Sem backend em runtime.</p><p class="caption">Billboards, texturas compactas e efeitos em pools.<br>IA a 10 Hz. Qualidade ajustável.</p></div><div class="architecture" aria-label="Arquitetura do jogo"><div class="architecture-head">NAVEGADOR / LOOP DO JOGO</div><div class="architecture-grid"><span><b>INPUT</b>câmera · movimento</span><span><b>COMBATE</b>armas · acertos · IA</span><span><b>PROGRESSÃO</b>Aura · loja · eventos</span><span><b>APRESENTAÇÃO</b>Three.js · HUD · áudio</span></div><div class="architecture-foot"><span>SAVE + META → localStorage</span><span>VITE → ARQUIVOS ESTÁTICOS</span></div></div></div></div>
+    </section>
+
+    <section class="slide paper evolution" data-title="Evolução e incidentes" aria-label="Tela 11 — evolução e desafios" hidden>
+      <div class="content"><p class="eyebrow">11 / INCIDENTES REGISTRADOS</p><h2>O projeto evoluiu.<br><em>O escopo também precisou evoluir.</em></h2><div class="evolution-layout"><div><div class="history"><div><b>01</b><p>ESCRITÓRIO<span>Atmosfera, humor e rotina.</span></p></div><div><b>02</b><p>VIRADA PARA O FPS<span>Arsenal, inimigos e economia.</span></p></div><div><b>03</b><p>LEGIBILIDADE E ESTABILIDADE<span>Pegada das armas, câmera e feedback.</span></p></div></div><div class="evolution-images"><img src="assets/screenshots/office.png" alt="Escritório do início do jogo"><span>→</span><img src="assets/screenshots/pistol.jpg" alt="Pistola no exterior atual do jogo"></div></div><div class="incident-list"><h3>O que deu trabalho.</h3><p><b>ENTRADA</b>Retomar o controle após cutscenes.</p><p><b>LEITURA</b>Mãos, armas e inimigos no mesmo estilo.</p><p><b>ECONOMIA</b>Pequenos drops previsíveis; preços crescentes.</p><p><b>PERFORMANCE</b>Limitar efeitos, memória e atualizações.</p><span class="status">AINDA EM POLIMENTO / PLAYTEST HUMANO</span></div></div></div>
+    </section>
+
+    <section class="slide shooter closing" data-title="Expediente encerrado" aria-label="Tela 12 — encerramento e demo" hidden>
+      <img class="scene-bg" src="assets/screenshots/boss.jpg" alt="Captura real da arena final do Diretor"><div class="dark-wash"></div>
+      <div class="content"><p class="eyebrow">12 / EXPEDIENTE ENCERRADO</p><h2>DIS<span>O</span>RDER</h2><p class="tagline">O RH não aprovou.<br>Você pode jogar.</p><div class="closing-actions"><a class="primary" href="https://gustvxlz.github.io/disorder/" target="_blank" rel="noopener noreferrer">JOGAR DISORDER ↗</a><button id="open-gallery">DEMO OFFLINE / CAPTURAS</button><a href="backup/DISORDER_APRESENTACAO.pdf" target="_blank">BACKUP PDF</a></div><p class="caption">O jogo online precisa de internet. Esta apresentação não.<br>Capítulo 1 jogável · projeto independente em polimento</p><a class="repo-link" href="https://github.com/gustvxlz/disorder" target="_blank" rel="noopener noreferrer">github.com/gustvxlz/disorder ↗</a></div><img class="closing-portrait" src="assets/images/protagonist-bust.png" alt="Retrato do protagonista DISORDER">
+    </section>
+
+    <nav class="deck-nav" aria-label="Navegação da apresentação"><button id="prev" aria-label="Tela anterior">←</button><span id="counter">01 / 12</span><button id="next" aria-label="Próxima tela">→</button><span class="key-hint">← → / ESPAÇO · M MAPA</span><button data-fullscreen aria-label="Entrar ou sair de tela cheia">⛶</button><div class="progress-track"><div id="progress"></div></div></nav>
+  </main>
+  <aside id="presenter" hidden aria-label="Notas do apresentador"><p class="presenter-warning">MODO DO APRESENTADOR<br>NÃO PROJETAR ESTA JANELA</p><div class="timer-row"><strong id="timer">00:00</strong><button id="timer-toggle">PAUSAR</button><button id="timer-reset">ZERAR</button></div><h2 id="note-title"></h2><p id="note-time"></p><h3>IDEIA PRINCIPAL</h3><p id="note-idea"></p><h3>FALA SUGERIDA</h3><p id="note-speech"></p><h3>TRANSIÇÃO</h3><p id="note-transition"></p><h3>A SEGUIR</h3><p id="note-next"></p></aside>
+  <dialog id="overview" aria-label="Mapa da apresentação"><div class="dialog-top"><h2>MAPA DO EXPEDIENTE</h2><button data-close="overview">FECHAR / M</button></div><div id="overview-list"></div></dialog>
+  <dialog id="gallery" aria-label="Galeria offline de capturas reais"><div class="dialog-top"><h2>DISORDER / DEMO EM CAPTURAS</h2><button data-close="gallery">VOLTAR À APRESENTAÇÃO</button></div><figure><img id="gallery-image" alt=""><figcaption id="gallery-caption"></figcaption></figure><div class="gallery-nav"><button id="gallery-prev">← ANTERIOR</button><span id="gallery-count"></span><button id="gallery-next">PRÓXIMA →</button></div></dialog>
+  <p id="toast" role="status" hidden></p>
+  <noscript>Ative JavaScript para a apresentação interativa ou abra backup/DISORDER_APRESENTACAO.pdf.</noscript>
+</body>
+</html>

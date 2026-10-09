@@ -1,0 +1,13 @@
+# Arquivos de trabalho; os originais locais são preservados.
+backup/review/
+assets/screenshots/enemies.jpg
+assets/screenshots/shop.jpg
+__pycache__/
+*.pyc
+*.tmp
+*.log
+node_modules/
+dist/
+_site/
+.DS_Store
+Thumbs.db

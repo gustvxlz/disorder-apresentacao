@@ -1,0 +1,50 @@
+name: Publicar apresentação no Pages
+
+# Execução manual enquanto o Pages depende da escolha do plano/visibilidade.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter somente o repositório da apresentação
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Preparar arquivos públicos
+        shell: bash
+        run: |
+          mkdir -p _site/assets/images _site/assets/screenshots _site/backup
+          cp index.html APRESENTADOR.html styles.css content.js interactions.js presentation.js _site/
+          for image in protagonist-bust.png zombie-executive.png zombie-courier.webp zombie-worker.webp zombie-director.webp boss-hr.webp boss-intern.webp; do
+            cp "assets/images/$image" _site/assets/images/
+          done
+          for capture in office.png boss.jpg shop-full.jpg extinguisher.jpg knife.jpg pistol.jpg shotgun.jpg smg.jpg revolver.jpg rifle.jpg stapler.jpg; do
+            cp "assets/screenshots/$capture" _site/assets/screenshots/
+          done
+          cp backup/DISORDER_APRESENTACAO.pdf _site/backup/
+          touch _site/.nojekyll
+      - name: Enviar apresentação estática
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

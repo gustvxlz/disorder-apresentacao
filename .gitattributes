@@ -1,0 +1,12 @@
+* text=auto
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
+*.pdf binary
+# Scripts auxiliares de produção não são linguagens do site.
+tools/** linguist-vendored
